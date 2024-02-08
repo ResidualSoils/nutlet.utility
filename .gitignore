@@ -1,0 +1,60 @@
+# Unity generated
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+
+# Addressable
+/[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*/*.bin*
+
+# Visual Studio / MonoDevelop generated / Rider
+.vs/
+.vsconfig
+.idea/
+ExportedObj/
+obj/
+*.svd
+*.userprefs
+*.csproj
+*.csproj.meta
+*.pidb
+*.suo
+*.sln
+*.sln.meta
+*.user
+*.unityproj
+*.booproj
+.consulo/
+*.tmp
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+*.[Cc]sproj.[Dd]ot[Ss]ettings
+
+# MacOS generated
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+
+# Other
+*.apk
+*.keystore
+Thumbs.db
+Thumbs.db.meta
+
+Assets/KXLogicLib/KXLogicLib/bin/
+Assets/KXLogicLib/KXLogicLib/bin.meta
+Assets/KXLogicLib/KXLogicLib/obj.meta
+!Assets/KXLogicLib/KXLogicLib.sln
+!Assets/KXLogicLib/KXLogicLib.sln.meta
+!Assets/KXLogicLib/KXLogicLib/KXLogicLib.csproj
+!Assets/KXLogicLib/KXLogicLib/KXLogicLib.csproj.meta
+Assets/KXLogicLib/KXLogicLib.sln.DotSettings.user
+Assets/KXLogicLib/KXLogicLib.sln.DotSettings.user.meta

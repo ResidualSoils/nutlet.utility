@@ -1,0 +1,9 @@
+{
+  "name": "cn.residualsoils.nutlet.utility",
+  "displayName": "Nutlet.Utility",
+  "version": "0.0.0",
+  "unity": "2022.3",
+  "description": "Utility of Unity",
+  "keywords": ["Utility", "Nutlet"],
+  "license": "Anti 996"
+}
