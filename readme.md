@@ -2,8 +2,8 @@
 一个不需要第三方依赖的工具库
 
 ## Install
-
-`"cn.residualsoils.nutlet.utility": "https://github.com/ResidualSoils/nutlet.utility.git?path=Asset/Nutlet/Utility#0.0.1",`
+打开项目目录下 `/Packages/manifest.json`添加下面这行：  
+`"cn.residualsoils.nutlet.utility": "https://github.com/ResidualSoils/nutlet.utility.git?path=Assets/Nutlet/Utility#0.0.1",`
 
 ## TODO
 
