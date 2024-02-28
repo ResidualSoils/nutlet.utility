@@ -144,6 +144,27 @@ namespace Nutlet.Utility
             }
         }
         
+        /// <summary>
+        /// 返回从指定索引开始的指定数量的序列
+        /// </summary>
+        /// <param name="startIndex"> 开始的索引 </param>
+        /// <param name="count"> 总数 </param>
+        public static IEnumerable<T> TakeFrom<T>(this IEnumerable<T> source, int startIndex, int count)
+        {
+            foreach (var t in source)
+            {
+                if (startIndex > 0)
+                {
+                    startIndex--;
+                }
+                else if (count > 0)
+                {
+                    count--;
+                    yield return t;
+                }
+            }
+        }
+        
         #endregion
 
         #region --- Transform ---
@@ -195,27 +216,56 @@ namespace Nutlet.Utility
             t.position = p;
             return t;
         }
+
+        /// <summary>
+        /// 获取所有子对象
+        /// </summary>
+        /// <param name="isRecursive"> 是否递归获取子对象的子对象 </param>
+        public static IEnumerable<Transform> AllChildren(this Transform root, bool isRecursive = false)
+        {
+            for (var i = 0; i < root.childCount; i++)
+            {
+                var child = root.GetChild(i);
+                if (isRecursive)
+                {
+                    yield return child;
+                    
+                    foreach (var t in child.AllChildren(true))
+                    {
+                        yield return t;
+                    }
+                }
+                else
+                {
+                    yield return child;
+                }
+            }
+        }
         
+        [Obsolete]
         /// <summary>
         /// 递归寻找所有对应名字的子对象
         /// </summary>
         /// <param name="name"> 子对象名字 <param>
         public static IEnumerable<Transform> DeepFindAll(this Transform root, string name)
         {
-            var list = new LinkedList<Transform>();
             for (var i = 0; i < root.childCount; i++)
             {
                 var child = root.GetChild(i);
                 if (child.name == name)
-                    list.AddLast(child);
-
-                if (child.childCount > 0)
-                    list.AddRange(child.DeepFindAll(name));
+                {
+                    yield return child;
+                }
+                    
+                var children = child.DeepFindAll(name);
+                foreach (var t in children)
+                {
+                    yield return t;
+                }
             }
-
-            return list.ToArray();
         }
-
+        
+        [Obsolete]
         /// <summary>
         /// 递归寻找所有子对象中第一个对应名字的对象
         /// </summary>
